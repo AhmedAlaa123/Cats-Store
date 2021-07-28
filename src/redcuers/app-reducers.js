@@ -1,30 +1,38 @@
+ // import Types
+ import { ADD_TO_CART, DELETE_FROM_CART, PAY_NOW } from "../types/types";
 
-import { ADDPRODUCT,DELETEPRODUCT,EMPTYTHECART } from "../types/types";
-const initState={
-    counter:0
-}
-export default function cartReducer(state=initState,action){
-
-
-    if(action.type===ADDPRODUCT)
+// Reducer
+const cartReducer=(state,action)=>{
+    let products=[]
+    if(action.type===ADD_TO_CART)
     {
-        //handdling add product to cart
-     return {
-         counter:state.counter+1
-     }
-    }
-    else if(action.type===DELETEPRODUCT)
-    {
-       
-        // handdling delete product
-           
-    }else if (action.type===EMPTYTHECART)
-    {
-        return{
-            counter:0
+        const index=state.findIndex(item=>item.product.id===action.productInfo.id)
+        
+        if(index>-1)
+        {
+            state[index].quantity+=parseInt(action.quantity);
+            products=[...state];
         }
-
+        else
+        {
+            products=[...state,{product:action.productInfo,quantity:parseInt(action.quantity)}]
+        }
+        // console.log('products',products)
+        
+        return products               
     }
-    console.log(state)
+    else if(action.type===DELETE_FROM_CART)
+    {
+        products=state.filter(item=>item.product.id!==action.id);
+        console.log('products',products)
+        return products;
+    }
+    else if(action.type===PAY_NOW)
+    {
+        return []
+        
+    }
+    if(state===undefined)return []
     return state;
 }
+export default cartReducer;

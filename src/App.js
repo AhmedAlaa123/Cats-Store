@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {Provider} from 'react-redux'
+import { BrowserRouter,Route,Switch } from "react-router-dom";
+
+
+// importing components
+import NavBar from './components/nav-bar'
+
+// import pages
+import HomePage from './pages/Home-page'
+import ProductsPage from './pages/products-page'
+import CartPage from './pages/cart-page'
+import ProductItemPage from "./pages/product-item-page";
+import PageNotFound from './pages/page-not-found'
+// import store
+import Store from "./store/store";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+        <BrowserRouter>
+          <div className=' container'>
+            <NavBar/>
+            <Switch>
+              <Route path='/' exact component={HomePage}/>   
+              <Route path='/Products' exact component={ProductsPage}/>   
+              <Route path='/Cart' component={CartPage}/>
+              <Route path='/Products/:id' exact component={ProductItemPage}/> 
+              <Route component={PageNotFound}/>
+            </Switch>
+          </div>
+        </BrowserRouter>
+   
   );
 }
 
-export default App;
+function AppWithStore()
+{
+  return (
+      <Provider store={Store}>
+        <App/>
+      </Provider>
+  );
+}
+
+export default AppWithStore;

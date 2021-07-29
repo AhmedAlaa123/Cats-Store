@@ -22,7 +22,7 @@ function App() {
           <div className=' container'>
             <NavBar/>
             <Switch>
-              <Route path='/' exact component={HomePage}/>   
+              <Route path='https://ahmedalaa123.github.io/' exact component={HomePage}/>   
               <Route path='/Products' exact component={ProductsPage}/>   
               <Route path='/Cart' component={CartPage}/>
               <Route path='/Products/:id' exact component={ProductItemPage}/> 

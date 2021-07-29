@@ -5,7 +5,7 @@ export default function NavBar(props)
 {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-ligh">
-            <NavLink className="navbar-brand" to="/">Cate Store</NavLink>
+            <NavLink className="navbar-brand" to="https://ahmedalaa123.github.io/Cats-Store/">Cate Store</NavLink>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>

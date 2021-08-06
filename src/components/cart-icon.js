@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import {Link} from 'react-router-dom'
  function CartIcon(props){
     return(
-        <Link to='/Cart'>
+        <Link to='/Cats-Store/Cart'>
             <div className='cart-icon'>
                 <i className='fa fa-shopping-cart fa-2x'></i>
                 <span className='badge badge-danger'>{props.totalQuantity}</span>

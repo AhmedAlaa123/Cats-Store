@@ -22,10 +22,10 @@ function App() {
           <div className=' container'>
             <NavBar/>
             <Switch>
-              <Route path='/' exact component={HomePage}/>   
-              <Route path='/Products' exact component={ProductsPage}/>   
-              <Route path='/Cart' component={CartPage}/>
-              <Route path='/Products/:id' exact component={ProductItemPage}/> 
+              <Route path='/Cats-Store/' exact component={HomePage}/>   
+              <Route path='/Cats-Store/Products' exact component={ProductsPage}/>   
+              <Route path='/Cats-Store/Cart' component={CartPage}/>
+              <Route path='/Cats-Store/Products/:id' exact component={ProductItemPage}/> 
               <Route component={PageNotFound}/>
             </Switch>
           </div>

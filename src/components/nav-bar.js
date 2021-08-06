@@ -13,13 +13,13 @@ export default function NavBar(props)
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item " >
-                        <NavLink exact className="nav-link" to="/">Home<span className="sr-only">(current)</span></NavLink>
+                        <NavLink exact className="nav-link" to="/Cats-Store/">Home<span className="sr-only">(current)</span></NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink exact className="nav-link" to="/Products">Products</NavLink>
+                        <NavLink exact className="nav-link" to="/Cats-Store/Products">Products</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink exact className="nav-link" to="/Cart">Cart</NavLink>
+                        <NavLink exact className="nav-link" to="/Cats-Store/Cart">Cart</NavLink>
                     </li>
                     
                 </ul>

@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
             <div className="card-body">
                 <h3 className="card-title">{props.product.name}</h3>
                 <p className="card-text">Price {props.product.price} &#36;</p>
-                <Link to={'/Products/'+props.product.id} className="btn btn-primary">Details</Link>
+                <Link to={'/Cats-Store/Products/'+props.product.id} className="btn btn-primary">Details</Link>
             </div>
         </div>
        
